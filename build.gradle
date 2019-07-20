@@ -55,10 +55,10 @@ dependencies {
   	 compile 'com.github.jsimone:webapp-runner:8.5.11.3'
 }
 task stage() {
-    dependsOn build,war//,clean
+    dependsOn build,clean//,war//,clean
 }
 
-war.mustRunAfter clean
+build.mustRunAfter clean
 
 task copyToLib(type: Copy) {
 	println("copy libs web runner")
@@ -69,7 +69,7 @@ task copyToLib(type: Copy) {
 }
 
 stage.dependsOn(copyToLib)
-war {
+jar {
     baseName = 'gradlejava'
     version = '0.0.1'
 }
