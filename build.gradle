@@ -70,3 +70,4 @@ task copyToLib(type: Copy) {
 stage.dependsOn(copyToLib)
 
 
+heroku config:set GRADLE_TASK="build"
