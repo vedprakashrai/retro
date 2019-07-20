@@ -1,1 +1,1 @@
-web: java  -jar build/webapp-runner-*.jar  build/libs/gradlejava.war
+web: java  -jar webapp-runner-*.jar  build/libs/gradlejava.war
