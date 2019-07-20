@@ -1,1 +1,1 @@
-web: java  -jar webapp-runner-*.jar  build/libs/gradlejava.war
+web: java  -Dserver.port=$PORT -jar webapp-runner-*.jar  build/libs/gradlejava.war
