@@ -55,7 +55,7 @@ dependencies {
   	 compile 'com.github.jsimone:webapp-runner:8.5.11.3'
 }
 task stage() {
-    dependsOn build,clean, war
+    dependsOn build//,clean, war
 }
 
 war.mustRunAfter clean
