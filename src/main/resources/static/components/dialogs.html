@@ -19,15 +19,15 @@
 </script>
 <script type="text/ng-template" id="addNewBoard">
   <h1>New board</h1>
-  <label for="newBoardName">Board name</label>
+  <label for="newBoardName">Sprint</label>
   <input id="newBoardName" ng-model="newBoard.name" type="text" ng-keyup="submitOnEnter($event, 'createNewBoard')"></input>
-  <label for="maxUserVotes">Max votes per user <small>(whole board)</small></label>
+  <!--<label for="maxUserVotes">Max votes per user <small>(whole board)</small></label>
   <input id="maxUserVotes" ng-model="newBoard.max_votes" type="number" ng-init="newBoard.max_votes = 6" ng-keyup="submitOnEnter($event, 'createNewBoard')"></input>
   <div class="labeled-checkbox">
     <input class="toggle-checkbox" ng-model="newBoard.text_editing_is_private" type="checkbox" ng-checked="true"></input>
     <label>Private writing during card editing</label>
-  <div>
-  <button ng-disabled="isBoardNameInvalid() || !isMaxVotesValid()" ng-click="createNewBoard()">Create</button>
+  <div>-->
+  <button ng-disabled="isBoardNameInvalid()" ng-click="newBoard.name= 'Sprint '+newBoard.name;createNewBoard()">Create</button>
 </script>
 <script type="text/ng-template" id="deleteCard">
   <h1>Delete note</h1>

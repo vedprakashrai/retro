@@ -229,7 +229,7 @@ angular
           }
 
           $scope.board = board.val();
-          $scope.maxVotes = board.val().max_votes ? board.val().max_votes : 6;
+          $scope.maxVotes = board.val().max_votes ? board.val().max_votes : 50;
           $scope.boardId = $rootScope.boardId = board.val().boardId;
           $scope.boardContext = $rootScope.boardContext = board.val().boardContext;
           $scope.loading = false;
@@ -310,7 +310,7 @@ angular
               date_created: new Date().toString(),
               columns: $scope.messageTypes,
               user_id: userData.uid,
-              max_votes: $scope.newBoard.max_votes || 6,
+              max_votes: $scope.newBoard.max_votes || 50,
               text_editing_is_private: $scope.newBoard.text_editing_is_private
             },
             function(error) {
@@ -448,6 +448,7 @@ angular
           switch (method) {
             case 'createNewBoard':
               if (!$scope.isBoardNameInvalid()) {
+            	 $scope.newBoard.name="Sprint "+$scope.newBoard.name;
                 $scope.createNewBoard();
               }
 
