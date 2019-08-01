@@ -191,6 +191,9 @@ angular
           $scope.searchParams[keyValue[0]] = keyValue[1];
         });
       $scope.sortField = $scope.searchParams.sort || 'date_created';
+      $scope.squad= $scope.searchParams.squad || 'Squad';
+	  $window.document.title =  $scope.squad + " Retro";
+      
       $scope.selectedType = 1;
       $scope.import = {
         data: [],
@@ -284,7 +287,7 @@ angular
       function redirectToBoard() {
         window.location.href =
           window.location.origin +
-          window.location.pathname +
+          window.location.pathname +'?squad='+$scope.squad+
           '#' +
           $scope.userId;
       }
